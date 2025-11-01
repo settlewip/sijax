@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ copilot/ci-test-php-8-4-compatibility ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest

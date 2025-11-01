@@ -5,12 +5,16 @@
 This document summarizes the PHP 8.4 compatibility testing and findings for the Sijax library.
 
 **Test Date:** 2024-11-01  
-**Current PHP Version Tested:** 8.3.6  
+**Local Testing PHP Version:** 8.3.6 (preliminary compatibility check)  
+**CI Testing PHP Version:** 8.4 (via GitHub Actions)  
 **Target PHP Version:** 8.4  
 
 ## Summary
 
-✅ **Overall Status:** The Sijax library appears to be compatible with PHP 8.4 based on local testing with PHP 8.3.6 and code analysis.
+✅ **Overall Status:** The Sijax library appears to be compatible with PHP 8.4 based on:
+- Preliminary local testing with PHP 8.3.6 (latest stable release)
+- Code analysis for PHP 8.4 compatibility issues
+- CI workflow configured to test with PHP 8.4
 
 ## CI/CD Integration
 
@@ -30,6 +34,8 @@ The CI workflow includes:
 6. **TypeError Handling** - Validates exception handling for PHP 8+
 
 ## Local Test Results
+
+> **Note:** Local testing was performed with PHP 8.3.6 (latest stable release at time of testing) as a preliminary compatibility check. PHP 8.4 is not yet GA (General Availability), but the CI workflow is configured to test with PHP 8.4 RC/snapshot versions via GitHub Actions.
 
 All tests passed successfully on PHP 8.3.6:
 

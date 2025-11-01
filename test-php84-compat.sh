@@ -19,7 +19,21 @@ echo ""
 # Check syntax
 echo "Step 2: Check PHP syntax"
 echo "Checking PHP syntax for all PHP files..."
-find . -name "*.php" -not -path "./vendor/*" -not -path "./.git/*" -exec php -l {} \; 2>&1 | grep -E "(Parse error|Fatal error|Errors parsing)" && exit 1 || echo "✅ No syntax errors found"
+SYNTAX_ERRORS=0
+while IFS= read -r -d '' file; do
+  if ! php -l "$file" > /dev/null 2>&1; then
+    echo "❌ Syntax error in: $file"
+    php -l "$file"
+    SYNTAX_ERRORS=1
+  fi
+done < <(find . -name "*.php" -not -path "./vendor/*" -not -path "./.git/*" -print0)
+
+if [ $SYNTAX_ERRORS -eq 0 ]; then
+  echo "✅ No syntax errors found"
+else
+  echo "❌ Syntax errors found!"
+  exit 1
+fi
 echo ""
 
 # Test autoloader

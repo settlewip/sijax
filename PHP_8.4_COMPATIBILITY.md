@@ -4,7 +4,7 @@
 
 This document summarizes the PHP 8.4 compatibility testing and findings for the Sijax library.
 
-**Test Date:** 2025-11-01  
+**Test Date:** 2024-11-01  
 **Current PHP Version Tested:** 8.3.6  
 **Target PHP Version:** 8.4  
 
@@ -170,5 +170,5 @@ The Sijax library is ready for PHP 8.4. The code follows modern PHP best practic
 ---
 
 **Document Version:** 1.0  
-**Last Updated:** 2025-11-01  
+**Last Updated:** 2024-11-01  
 **Author:** Copilot Coding Agent
